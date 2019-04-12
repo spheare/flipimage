@@ -17,7 +17,7 @@ argv = require('yargs')
 	.epilog('copyright 2019 Kevin Vaesen')
 	.demandCommand(1).argv;
 
-process.stdout.write('Image strip dinges\n(C) 2019 Kevin Vaesen.\n');
+process.stdout.write('Image flipstrip dinges\n(C) 2019 Kevin Vaesen.\n');
 
 const parseUnit = (u, w) =>
 		('' + u).indexOf('%') >= 0 ? Math.max(2, Math.ceil(w * 0.01 * parseFloat(u, 10))) : parseInt(u, 10),
