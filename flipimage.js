@@ -1,26 +1,26 @@
 #!/usr/local/bin/node
 const libJPEG = require('jpeg-js'),
-	fs = require('fs');
-argv = require('yargs')
-	.usage('Usage: $0 <source> [options]')
-	.example('$0 image.jpg', 'Flip strips of 1% in image.jpg and save in out-image.jpg')
-	.example('$0 image.jpg --out example.jpg', 'Flip strips in image.jpg and save in example.jpg')
-	.example('$0 image.jpg --strips 64px', 'Flip strips of 64 pixels')
-	.example('$0 image.jpg --dir=horizontal --strips 10%', 'Flip in horizontal strips of 10% of image height')
-	.string('s')
-	.alias('s', 'strips')
-	.default('s', '1%')
-	.describe('s', 'Set strip width. Can be suffixed with "px" or "%" to control units')
-	.alias('o', 'out')
-	.normalize('o')
-	.describe('o', 'Save results to <file>. If omitted, saves to "out-<source>.jpg"')
-	.alias('d', 'dir')
-	.choices('d', [ 'horizontal', 'vertical', 'h', 'v' ])
-	.describe('d', 'Direction of resulting strips')
-	.help('h')
-	.alias('h', 'help')
-	.epilog('copyright 2019 Kevin Vaesen')
-	.demandCommand(1).argv;
+	fs = require('fs'),
+	argv = require('yargs')
+		.usage('Usage: $0 <source> [options]')
+		.example('$0 image.jpg', 'Flip strips of 1% in image.jpg and save in out-image.jpg')
+		.example('$0 image.jpg --out example.jpg', 'Flip strips in image.jpg and save in example.jpg')
+		.example('$0 image.jpg --strips 64px', 'Flip strips of 64 pixels')
+		.example('$0 image.jpg --dir=horizontal --strips 10%', 'Flip in horizontal strips of 10% of image height')
+		.string('s')
+		.alias('s', 'strips')
+		.default('s', '1%')
+		.describe('s', 'Set strip width. Can be suffixed with "px" or "%" to control units')
+		.alias('o', 'out')
+		.normalize('o')
+		.describe('o', 'Save results to <file>. If omitted, saves to "out-<source>.jpg"')
+		.alias('d', 'dir')
+		.choices('d', [ 'horizontal', 'vertical', 'h', 'v' ])
+		.describe('d', 'Direction of resulting strips')
+		.help('h')
+		.alias('h', 'help')
+		.epilog('copyright 2019 Kevin Vaesen')
+		.demandCommand(1).argv;
 
 process.stdout.write('Image flipstrip dinges\n(C) 2019 Kevin Vaesen.\n');
 
