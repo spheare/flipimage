@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jpeg-js": "^0.3.4",
+    "jpeg-js": "^0.4.4",
     "yargs": "^13.2.2"
   }
 }
